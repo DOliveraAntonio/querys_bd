@@ -1,0 +1,18 @@
+-- AQUI SOLO CONSULTAMOS LOS REGISTROS A ELIMINAR
+SELECT count(*) as canales FROM reservations
+WHERE id_canal NOT IN (
+    SELECT id FROM channel
+);
+
+-- AQUI YA LOS QUERYS PARA ELIMINAR ESOS REGISTROS
+DELETE FROM reservations
+WHERE id_canal NOT IN (
+    SELECT id FROM channel
+);
+
+-- YA PODEMOS CREAR LAS LLAVES FORANEAS
+ALTER TABLE reservations
+ADD CONSTRAINT reservations__channels_fk
+FOREIGN KEY (id_canal)
+REFERENCES channel (id)
+ON DELETE CASCADE ;
