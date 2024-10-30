@@ -1,3 +1,4 @@
+-- TODO RESERVATIONS, DETAILS y PAYMENTS
 -- AQUI SOLO CONSULTAMOS LOS REGISTROS A ELIMINAR
 SELECT count(*) as tours FROM reservations_details_tour
 WHERE id_reservation NOT IN (
