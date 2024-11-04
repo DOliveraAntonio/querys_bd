@@ -1,0 +1,18 @@
+-- AQUI SOLO CONSULTAMOS LOS REGISTROS A ELIMINAR
+SELECT * FROM reservations
+WHERE hotel_id NOT IN (
+    SELECT id FROM destinatios
+);
+
+-- AQUI YA LOS QUERYS PARA ELIMINAR ESOS REGISTROS
+DELETE FROM reservations
+WHERE hotel_id NOT IN (
+    SELECT id FROM destinatios
+);
+
+-- YA PODEMOS CREAR LAS LLAVES FORANEAS
+ALTER TABLE reservations
+ADD CONSTRAINT reservations__destinations_fk
+FOREIGN KEY (hotel_id)
+REFERENCES destinatios (id)
+ON DELETE CASCADE ;
