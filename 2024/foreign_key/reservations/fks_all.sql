@@ -1,4 +1,3 @@
-
 -- ############################################################################ MODIFICAMOS FORENKEY DE PAYMENTS CON RESERVATIONS
 ALTER TABLE history_reservation_payments
     DROP constraint history_reservation_payments_reservations_id_fk;
