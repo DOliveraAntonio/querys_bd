@@ -20,4 +20,4 @@ ALTER TABLE reservations
 ADD CONSTRAINT reservations__promo_code_fk
 FOREIGN KEY (id_promo_code)
 REFERENCES promo_code (id)
-ON DELETE CASCADE ;
+ON DELETE SET NULL ;
