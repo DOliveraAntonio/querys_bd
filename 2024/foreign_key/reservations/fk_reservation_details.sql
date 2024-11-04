@@ -1,3 +1,13 @@
+
+-- MODIFICAMOS FORENKEY DE PAYMENTS CON RESERVATIONS
+ALTER TABLE history_reservation_payments
+    DROP constraint history_reservation_payments_reservations_id_fk;
+
+ALTER TABLE history_reservation_payments
+    ADD constraint history_reservation_payments_reservations_id_fk
+        foreign key (id_reservation) references reservations
+            on delete cascade;
+
 -- TODO RESERVATIONS, DETAILS y PAYMENTS
 -- AQUI SOLO CONSULTAMOS LOS REGISTROS A ELIMINAR
 SELECT count(*) as tours FROM reservations_details_tour

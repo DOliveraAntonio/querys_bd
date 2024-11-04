@@ -6,7 +6,7 @@ WHERE id_history_location NOT IN (
 
 -- AQUI YA LOS QUERYS PARA ELIMINAR ESOS REGISTROS
 DELETE FROM reservations
-WHERE reservations.id_history_location NOT IN (
+WHERE id_history_location NOT IN (
     SELECT id FROM sales_location
 );
 
