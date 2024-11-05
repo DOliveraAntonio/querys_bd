@@ -72,3 +72,28 @@ ADD CONSTRAINT country_fk
 FOREIGN KEY (pais_id)
 REFERENCES country (id)
 ON DELETE SET NULL ;
+
+-- ############################################################################ CATEGORIA DESTINO
+-- CAMBIAR VALOR A NULL
+UPDATE destinatios
+SET id_categoria_destino = NULL
+where id_categoria_destino = 0;
+
+-- AQUI SOLO CONSULTAMOS LOS REGISTROS A ELIMINAR
+SELECT * FROM destinatios
+WHERE id_categoria_destino NOT IN (
+    SELECT id FROM category_destins
+);
+
+-- AQUI YA LOS QUERYS PARA ELIMINAR ESOS REGISTROS
+DELETE FROM destinatios
+WHERE id_categoria_destino NOT IN (
+    SELECT id FROM category_destins
+);
+
+-- YA PODEMOS CREAR LAS LLAVES FORANEAS
+ALTER TABLE destinatios
+ADD CONSTRAINT category_destins_fk
+FOREIGN KEY (id_categoria_destino)
+REFERENCES category_destins (id)
+ON DELETE SET NULL ;
