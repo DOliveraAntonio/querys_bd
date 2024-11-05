@@ -25,6 +25,11 @@ WHERE id_reservation NOT IN (
     SELECT id FROM reservations
 );
 
+SELECT count(*) as transportacion FROM reservations_details_discs
+WHERE id_reservacion NOT IN (
+    SELECT id FROM reservations
+);
+
 SELECT count(*) as payments FROM reservations_payments
     WHERE id_reserva NOT IN (
     SELECT id FROM reservations
@@ -44,6 +49,11 @@ WHERE id_reservacion NOT IN (
 
 DELETE FROM reservations_details_tickets
 WHERE id_reservation NOT IN (
+    SELECT id FROM reservations
+);
+
+DELETE FROM reservations_details_discs
+WHERE id_reservacion NOT IN (
     SELECT id FROM reservations
 );
 
@@ -68,6 +78,12 @@ ON DELETE CASCADE ;
 ALTER TABLE reservations_details_tickets
 ADD CONSTRAINT reservations_details_tickets__reservations_fk
 FOREIGN KEY (id_reservation)
+REFERENCES reservations (id)
+ON DELETE CASCADE ;
+
+ALTER TABLE reservations_details_discs
+ADD CONSTRAINT reservations_details_discs__reservations_fk
+FOREIGN KEY (id_reservacion)
 REFERENCES reservations (id)
 ON DELETE CASCADE ;
 
