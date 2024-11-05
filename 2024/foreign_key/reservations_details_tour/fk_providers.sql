@@ -1,3 +1,8 @@
+-- CAMBIAR VALOR A NULL
+UPDATE reservations_details_tour
+SET id_proveedor = NULL
+where id_proveedor = 0;
+
 -- AQUI SOLO CONSULTAMOS LOS REGISTROS A ELIMINAR
 SELECT * FROM reservations_details_tour
 WHERE id_proveedor NOT IN (

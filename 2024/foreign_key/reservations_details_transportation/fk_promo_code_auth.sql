@@ -1,3 +1,8 @@
+-- CAMBIAR VALOR A NULL
+UPDATE reservations_details_transportation
+SET id_promo_code_auth = NULL
+where id_promo_code_auth = 0;
+
 -- AQUI SOLO CONSULTAMOS LOS REGISTROS A ELIMINAR
 SELECT * FROM reservations_details_transportation
 WHERE id_promo_code_auth NOT IN (

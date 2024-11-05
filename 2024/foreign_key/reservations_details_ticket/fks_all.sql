@@ -1,4 +1,9 @@
 -- ############################################################################ PACKAGES
+-- CAMBIAR VALOR A NULL
+UPDATE reservations_details_tickets
+SET id_paquete = NULL
+where id_paquete = 0;
+
 -- AQUI SOLO CONSULTAMOS LOS REGISTROS A ELIMINAR
 SELECT * FROM reservations_details_tickets
 WHERE id_paquete NOT IN (
@@ -19,6 +24,11 @@ REFERENCES packages_info (id)
 ON DELETE SET NULL ;
 
 -- ############################################################################ PRODUCTS METHOD
+-- CAMBIAR VALOR A NULL
+UPDATE reservations_details_tickets
+SET id_metodo_producto = NULL
+where id_metodo_producto = 0;
+
 -- AQUI SOLO CONSULTAMOS LOS REGISTROS A ELIMINAR
 SELECT * FROM reservations_details_tickets
 WHERE id_metodo_producto NOT IN (
@@ -39,6 +49,11 @@ REFERENCES products (id)
 ON DELETE SET NULL ;
 
 -- ############################################################################ PRODUCTS
+-- CAMBIAR VALOR A NULL
+UPDATE reservations_details_tickets
+SET id_productos = NULL
+where id_productos = 0;
+
 -- AQUI SOLO CONSULTAMOS LOS REGISTROS A ELIMINAR
 SELECT * FROM reservations_details_tickets
 WHERE id_productos NOT IN (
@@ -59,6 +74,11 @@ REFERENCES products (id)
 ON DELETE SET NULL ;
 
 -- ############################################################################ PROMO CODE AUTH
+-- CAMBIAR VALOR A NULL
+UPDATE reservations_details_tickets
+SET id_promo_code_auth = NULL
+where id_promo_code_auth = 0;
+
 -- AQUI SOLO CONSULTAMOS LOS REGISTROS A ELIMINAR
 SELECT * FROM reservations_details_tickets
 WHERE id_promo_code_auth NOT IN (
@@ -79,6 +99,11 @@ REFERENCES promo_code_auth (id)
 ON DELETE SET NULL ;
 
 -- ############################################################################ PROMO CODE
+-- CAMBIAR VALOR A NULL
+UPDATE reservations_details_tickets
+SET promo_code = NULL
+where promo_code = 0;
+
 -- AQUI SOLO CONSULTAMOS LOS REGISTROS A ELIMINAR
 SELECT * FROM reservations_details_tickets
 WHERE id_promo_code NOT IN (
@@ -99,6 +124,11 @@ REFERENCES promo_code (id)
 ON DELETE SET NULL ;
 
 -- ############################################################################ PROVIDERS
+-- CAMBIAR VALOR A NULL
+UPDATE reservations_details_tickets
+SET id_proveedor = NULL
+where id_proveedor = 0;
+
 -- AQUI SOLO CONSULTAMOS LOS REGISTROS A ELIMINAR
 SELECT * FROM reservations_details_tickets
 WHERE id_proveedor NOT IN (
@@ -119,6 +149,11 @@ REFERENCES provider (id)
 ON DELETE SET NULL ;
 
 -- ############################################################################ SERVICES
+-- CAMBIAR VALOR A NULL
+UPDATE reservations_details_tickets
+SET id_servicio = NULL
+where id_servicio = 0;
+
 -- AQUI SOLO CONSULTAMOS LOS REGISTROS A ELIMINAR
 SELECT * FROM reservations_details_tickets
 WHERE id_servicio NOT IN (
@@ -139,6 +174,11 @@ REFERENCES tickets_rate (id)
 ON DELETE SET NULL ;
 
 -- ############################################################################ SUB PRODUCTO
+-- CAMBIAR VALOR A NULL
+UPDATE reservations_details_tickets
+SET id_sub_producto = NULL
+where id_sub_producto = 0;
+
 -- AQUI SOLO CONSULTAMOS LOS REGISTROS A ELIMINAR
 SELECT * FROM reservations_details_tickets
 WHERE id_sub_producto NOT IN (
@@ -159,6 +199,11 @@ REFERENCES sub_products (id)
 ON DELETE SET NULL ;
 
 -- ############################################################################ TIPS XCARET
+-- CAMBIAR VALOR A NULL
+UPDATE reservations_details_tickets
+SET tips_id = NULL
+where tips_id = 0;
+
 -- AQUI SOLO CONSULTAMOS LOS REGISTROS A ELIMINAR
 SELECT * FROM reservations_details_tickets
 WHERE tips_id NOT IN (
@@ -179,6 +224,11 @@ REFERENCES tips_xcaret (id)
 ON DELETE SET NULL;
 
 -- ############################################################################ WEB PROMOTION
+-- CAMBIAR VALOR A NULL
+UPDATE reservations_details_tickets
+SET id_web_promotion_applied = NULL
+where id_web_promotion_applied = 0;
+
 -- AQUI SOLO CONSULTAMOS LOS REGISTROS A ELIMINAR
 SELECT * FROM reservations_details_tickets
 WHERE id_web_promotion_applied NOT IN (

@@ -24,6 +24,11 @@ REFERENCES product_method (id)
 ON DELETE SET NULL ;
 
 -- ############################################################################ PRODUCTS
+-- CAMBIAR VALOR A NULL
+UPDATE reservations_details_transportation
+SET id_productos = NULL
+where id_productos = 0;
+
 -- AQUI SOLO CONSULTAMOS LOS REGISTROS A ELIMINAR
 SELECT * FROM reservations_details_transportation
 WHERE id_productos NOT IN (
@@ -44,6 +49,11 @@ REFERENCES products (id)
 ON DELETE SET NULL ;
 
 -- ############################################################################ PROMO CODE AUTH
+-- CAMBIAR VALOR A NULL
+UPDATE reservations_details_transportation
+SET id_promo_code_auth = NULL
+where id_promo_code_auth = 0;
+
 -- AQUI SOLO CONSULTAMOS LOS REGISTROS A ELIMINAR
 SELECT * FROM reservations_details_transportation
 WHERE id_promo_code_auth NOT IN (
@@ -64,6 +74,11 @@ REFERENCES promo_code_auth (id)
 ON DELETE SET NULL ;
 
 -- ############################################################################ PROMO CODE
+-- CAMBIAR VALOR A NULL
+UPDATE reservations_details_transportation
+SET id_promo_code = NULL
+where id_promo_code = 0;
+
 -- AQUI SOLO CONSULTAMOS LOS REGISTROS A ELIMINAR
 SELECT * FROM reservations_details_transportation
 WHERE id_promo_code NOT IN (
@@ -84,6 +99,11 @@ REFERENCES promo_code (id)
 ON DELETE SET NULL ;
 
 -- ############################################################################ PROVIDERS
+-- CAMBIAR VALOR A NULL
+UPDATE reservations_details_transportation
+SET id_proveedor = NULL
+where id_proveedor = 0;
+
 -- AQUI SOLO CONSULTAMOS LOS REGISTROS A ELIMINAR
 SELECT * FROM reservations_details_transportation
 WHERE id_proveedor NOT IN (
@@ -104,6 +124,11 @@ REFERENCES provider (id)
 ON DELETE SET NULL ;
 
 -- ############################################################################ PERCENTAGE RATES
+-- CAMBIAR VALOR A NULL
+UPDATE reservations_details_transportation
+SET id_transportation_rates_percent = NULL
+where id_transportation_rates_percent = 0;
+
 -- AQUI SOLO CONSULTAMOS LOS REGISTROS A ELIMINAR
 SELECT * FROM reservations_details_transportation
 WHERE id_transportation_rates_percent NOT IN (
@@ -124,6 +149,11 @@ REFERENCES transportation_rates_percents (id)
 ON DELETE CASCADE ;
 
 -- ############################################################################ TRANSPORTATION RATES
+-- CAMBIAR VALOR A NULL
+UPDATE reservations_details_transportation
+SET id_transportation_rates = NULL
+where id_transportation_rates = 0;
+
 -- AQUI SOLO CONSULTAMOS LOS REGISTROS A ELIMINAR
 SELECT * FROM reservations_details_transportation
 WHERE id_transportation_rates NOT IN (
@@ -145,6 +175,11 @@ ON DELETE CASCADE ;
 
 -- ############################################################################ UNITS
 -- LLEGADAS
+-- CAMBIAR VALOR A NULL
+UPDATE reservations_details_transportation
+SET id_unidad_llegada = NULL
+where id_unidad_llegada = 0;
+
 -- AQUI SOLO CONSULTAMOS LOS REGISTROS A ELIMINAR
 SELECT * FROM reservations_details_transportation
 WHERE id_unidad_llegada NOT IN (
@@ -165,6 +200,11 @@ REFERENCES transfer_units (id)
 ON DELETE SET NULL ;
 
 -- SALIDAS
+-- CAMBIAR VALOR A NULL
+UPDATE reservations_details_transportation
+SET id_unidad_salida = NULL
+where id_unidad_salida = 0;
+
 -- AQUI SOLO CONSULTAMOS LOS REGISTROS A ELIMINAR
 SELECT * FROM reservations_details_transportation
 WHERE id_unidad_salida NOT IN (
@@ -185,6 +225,11 @@ REFERENCES transfer_units (id)
 ON DELETE SET NULL ;
 
 -- ############################################################################ USERS
+-- CAMBIAR VALOR A NULL
+UPDATE reservations_details_transportation
+SET id_user_operated = NULL
+where id_user_operated = 0;
+
 -- AQUI SOLO CONSULTAMOS LOS REGISTROS A ELIMINAR
 SELECT * FROM reservations_details_transportation
 WHERE id_user_operated NOT IN (

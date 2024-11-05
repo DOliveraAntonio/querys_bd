@@ -1,4 +1,9 @@
 -- ############################################################################ RESERVATION
+-- CAMBIAR VALOR A NULL
+UPDATE cancellation_requests
+SET reservation_id = NULL
+where reservation_id = 0;
+
 -- AQUI SOLO CONSULTAMOS LOS REGISTROS A ELIMINAR
 SELECT * FROM cancellation_requests
 WHERE reservation_id NOT IN (
@@ -19,6 +24,11 @@ REFERENCES reservations (id)
 ON DELETE CASCADE;
 
 -- ############################################################################ USERS
+-- CAMBIAR VALOR A NULL
+UPDATE cancellation_requests
+SET user_id = NULL
+where user_id = 0;
+
 -- AQUI SOLO CONSULTAMOS LOS REGISTROS A ELIMINAR
 SELECT * FROM cancellation_requests
 WHERE user_id NOT IN (
@@ -39,6 +49,11 @@ REFERENCES users (id)
 ON DELETE CASCADE;
 
 -- ############################################################################ CANALES
+-- CAMBIAR VALOR A NULL
+UPDATE cancellation_requests
+SET id_canal = NULL
+where id_canal = 0;
+
 -- AQUI SOLO CONSULTAMOS LOS REGISTROS A ELIMINAR
 SELECT * FROM cancellation_requests
 WHERE id_canal NOT IN (

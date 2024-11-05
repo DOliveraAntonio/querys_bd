@@ -1,3 +1,8 @@
+-- CAMBIAR VALOR A NULL
+UPDATE reservations_details_tickets
+SET id_paquete = NULL
+where id_paquete = 0;
+
 -- AQUI SOLO CONSULTAMOS LOS REGISTROS A ELIMINAR
 SELECT * FROM reservations_details_tickets
 WHERE id_paquete NOT IN (

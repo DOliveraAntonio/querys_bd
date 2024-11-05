@@ -1,4 +1,9 @@
 -- ############################################################################ RESERVATION LED
+-- CAMBIAR VALOR A NULL
+UPDATE history_reservation_led
+SET id_reservation_led = NULL
+where id_reservation_led = 0;
+
 -- AQUI SOLO CONSULTAMOS LOS REGISTROS A ELIMINAR
 SELECT * FROM history_reservation_led
 WHERE id_reservation_led NOT IN (
@@ -19,6 +24,11 @@ REFERENCES reservations (id)
 ON DELETE CASCADE;
 
 -- ############################################################################ RESERVATION
+-- CAMBIAR VALOR A NULL
+UPDATE history_reservation_led
+SET id_reservation = NULL
+where id_reservation = 0;
+
 -- AQUI SOLO CONSULTAMOS LOS REGISTROS A ELIMINAR
 SELECT * FROM history_reservation_led
 WHERE id_reservation NOT IN (
@@ -39,6 +49,11 @@ REFERENCES reservations (id)
 ON DELETE CASCADE;
 
 -- ############################################################################ USERS
+-- CAMBIAR VALOR A NULL
+UPDATE history_reservation_led
+SET id_user = NULL
+where id_user = 0;
+
 -- AQUI SOLO CONSULTAMOS LOS REGISTROS A ELIMINAR
 SELECT * FROM history_reservation_led
 WHERE id_user NOT IN (

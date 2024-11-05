@@ -1,3 +1,7 @@
+UPDATE reservations_details_transportation
+SET id_user_operated = NULL
+where id_user_operated = 0;
+
 -- AQUI SOLO CONSULTAMOS LOS REGISTROS A ELIMINAR
 SELECT * FROM reservations_details_transportation
 WHERE id_user_operated NOT IN (

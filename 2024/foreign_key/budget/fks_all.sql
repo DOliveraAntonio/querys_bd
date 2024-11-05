@@ -1,4 +1,9 @@
 -- ############################################################################ SALES PLACE
+-- CAMBIAR VALOR A NULL
+UPDATE budget
+SET sales_place_id = NULL
+where sales_place_id = 0;
+
 -- AQUI SOLO CONSULTAMOS LOS REGISTROS A ELIMINAR
 SELECT * FROM budget
 WHERE sales_place_id NOT IN (
@@ -19,6 +24,11 @@ REFERENCES sales_place (id)
 ON DELETE CASCADE;
 
 -- ############################################################################ SALES LOCATION
+-- CAMBIAR VALOR A NULL
+UPDATE budget
+SET sales_location_id = NULL
+where sales_location_id = 0;
+
 -- AQUI SOLO CONSULTAMOS LOS REGISTROS A ELIMINAR
 SELECT * FROM budget
 WHERE sales_location_id NOT IN (
@@ -39,6 +49,11 @@ REFERENCES sales_location (id)
 ON DELETE CASCADE;
 
 -- ############################################################################ CANAL
+-- CAMBIAR VALOR A NULL
+UPDATE budget
+SET canal_id = NULL
+where canal_id = 0;
+
 -- AQUI SOLO CONSULTAMOS LOS REGISTROS A ELIMINAR
 SELECT * FROM budget
 WHERE canal_id NOT IN (
@@ -59,6 +74,11 @@ REFERENCES channel (id)
 ON DELETE CASCADE;
 
 -- ############################################################################ HOTEL
+-- CAMBIAR VALOR A NULL
+UPDATE budget
+SET hotel_id = NULL
+where hotel_id = 0;
+
 -- AQUI SOLO CONSULTAMOS LOS REGISTROS A ELIMINAR
 SELECT * FROM budget
 WHERE hotel_id NOT IN (

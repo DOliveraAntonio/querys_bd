@@ -1,4 +1,9 @@
 -- ############################################################################ CURRENCY
+-- CAMBIAR VALOR A NULL
+UPDATE currency_valor
+SET id_moneda = NULL
+where id_moneda = 0;
+
 -- AQUI SOLO CONSULTAMOS LOS REGISTROS A ELIMINAR
 SELECT * FROM currency_valor
 WHERE id_moneda NOT IN (
@@ -19,6 +24,11 @@ REFERENCES currency (id)
 ON DELETE CASCADE;
 
 -- ############################################################################ CURRENCY VALOR
+-- CAMBIAR VALOR A NULL
+UPDATE currency_valor
+SET id_moneda_valor = NULL
+where id_moneda_valor = 0;
+
 -- AQUI SOLO CONSULTAMOS LOS REGISTROS A ELIMINAR
 SELECT * FROM currency_valor
 WHERE id_moneda_valor NOT IN (

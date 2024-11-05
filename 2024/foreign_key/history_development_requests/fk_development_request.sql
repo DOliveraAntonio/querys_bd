@@ -1,3 +1,8 @@
+-- CAMBIAR VALOR A NULL
+UPDATE history_development_requests
+SET development_request_id = NULL
+where development_request_id = 0;
+
 -- AQUI SOLO CONSULTAMOS LOS REGISTROS A ELIMINAR
 SELECT * FROM history_development_requests
 WHERE development_request_id NOT IN (

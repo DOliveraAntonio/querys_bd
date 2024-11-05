@@ -1,3 +1,8 @@
+-- CAMBIAR VALOR A NULL
+UPDATE reservations_payments
+SET id_currency_valor = NULL
+where id_currency_valor = 0;
+
 -- AQUI SOLO CONSULTAMOS LOS REGISTROS A ELIMINAR
 SELECT * FROM reservations_payments
 WHERE id_currency_valor NOT IN (

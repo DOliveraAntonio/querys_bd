@@ -1,3 +1,8 @@
+-- CAMBIAR VALOR A NULL
+UPDATE reservations_details_tickets
+SET id_sub_producto = NULL
+where id_sub_producto = 0;
+
 -- AQUI SOLO CONSULTAMOS LOS REGISTROS A ELIMINAR
 SELECT * FROM reservations_details_tickets
 WHERE id_sub_producto NOT IN (

@@ -1,4 +1,9 @@
 -- ############################################################################ RESERVATIONS
+-- CAMBIAR VALOR A NULL
+UPDATE led_assignment
+SET id_reservation = NULL
+where id_reservation = 0;
+
 -- AQUI SOLO CONSULTAMOS LOS REGISTROS A ELIMINAR
 SELECT * FROM led_assignment
 WHERE id_reservation NOT IN (
@@ -19,6 +24,11 @@ REFERENCES reservations (id)
 ON DELETE CASCADE;
 
 -- ############################################################################ USERS
+-- CAMBIAR VALOR A NULL
+UPDATE led_assignment
+SET id_user = NULL
+where id_user = 0;
+
 -- AQUI SOLO CONSULTAMOS LOS REGISTROS A ELIMINAR
 SELECT * FROM led_assignment
 WHERE id_user NOT IN (

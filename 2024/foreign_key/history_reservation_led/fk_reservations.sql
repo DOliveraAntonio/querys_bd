@@ -1,3 +1,8 @@
+-- CAMBIAR VALOR A NULL
+UPDATE history_reservation_led
+SET id_reservation = NULL
+where id_reservation = 0;
+
 -- AQUI SOLO CONSULTAMOS LOS REGISTROS A ELIMINAR
 SELECT * FROM history_reservation_led
 WHERE id_reservation NOT IN (

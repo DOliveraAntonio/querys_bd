@@ -1,4 +1,9 @@
 -- ############################################################################ CURRENCY VALOR
+-- CAMBIAR VALOR A NULL
+UPDATE reservations_payments
+SET id_currency_valor = NULL
+where id_currency_valor = 0;
+
 -- AQUI SOLO CONSULTAMOS LOS REGISTROS A ELIMINAR
 SELECT * FROM reservations_payments
 WHERE id_currency_valor NOT IN (
@@ -19,6 +24,11 @@ REFERENCES currency_valor (id)
 ON DELETE SET NULL ;
 
 -- ############################################################################ PAYMENTS METHOD
+-- CAMBIAR VALOR A NULL
+UPDATE reservations_payments
+SET id_forma_pago = NULL
+where id_forma_pago = 0;
+
 -- AQUI SOLO CONSULTAMOS LOS REGISTROS A ELIMINAR
 SELECT * FROM reservations_payments
 WHERE id_forma_pago NOT IN (
@@ -39,6 +49,11 @@ REFERENCES form_of_payment (id)
 ON DELETE SET NULL ;
 
 -- ############################################################################ USERS
+-- CAMBIAR VALOR A NULL
+UPDATE reservations_payments
+SET user_id = NULL
+where user_id = 0;
+
 -- AQUI SOLO CONSULTAMOS LOS REGISTROS A ELIMINAR
 SELECT * FROM reservations_payments
 WHERE user_id NOT IN (

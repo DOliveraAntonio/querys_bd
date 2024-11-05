@@ -1,3 +1,8 @@
+-- CAMBIAR VALOR A NULL
+UPDATE reservations_details_tour
+SET id_web_promotion_applied = NULL
+where id_web_promotion_applied = 0;
+
 -- AQUI SOLO CONSULTAMOS LOS REGISTROS A ELIMINAR
 SELECT * FROM reservations_details_tour
 WHERE id_web_promotion_applied NOT IN (

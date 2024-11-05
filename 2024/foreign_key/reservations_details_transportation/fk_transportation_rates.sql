@@ -1,3 +1,8 @@
+-- CAMBIAR VALOR A NULL
+UPDATE reservations_details_transportation
+SET id_transportation_rates = NULL
+where id_transportation_rates = 0;
+
 -- AQUI SOLO CONSULTAMOS LOS REGISTROS A ELIMINAR
 SELECT * FROM reservations_details_transportation
 WHERE id_transportation_rates NOT IN (

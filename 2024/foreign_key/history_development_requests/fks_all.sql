@@ -1,4 +1,9 @@
 -- ############################################################################ DEVELOPMENT REQUEST
+-- CAMBIAR VALOR A NULL
+UPDATE history_development_requests
+SET development_request_id = NULL
+where development_request_id = 0;
+
 -- AQUI SOLO CONSULTAMOS LOS REGISTROS A ELIMINAR
 SELECT * FROM history_development_requests
 WHERE development_request_id NOT IN (
@@ -19,6 +24,11 @@ REFERENCES development_requests (id)
 ON DELETE SET NULL ;
 
 -- ############################################################################ USERS
+-- CAMBIAR VALOR A NULL
+UPDATE history_development_requests
+SET user_id = NULL
+where user_id = 0;
+
 -- AQUI SOLO CONSULTAMOS LOS REGISTROS A ELIMINAR
 SELECT * FROM history_development_requests
 WHERE user_id NOT IN (

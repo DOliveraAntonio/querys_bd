@@ -1,3 +1,8 @@
+-- CAMBIAR VALOR A NULL
+UPDATE history_locations
+SET id_sales_location = NULL
+where id_sales_location = 0;
+
 -- AQUI SOLO CONSULTAMOS LOS REGISTROS A ELIMINAR
 SELECT * FROM history_locations
 WHERE id_sales_location NOT IN (
