@@ -15,4 +15,4 @@ ALTER TABLE history_reservation_led
 ADD CONSTRAINT reservations_fk
 FOREIGN KEY (localizador)
 REFERENCES reservations (id)
-ON DELETE SET NULL ;
+ON DELETE CASCADE ;

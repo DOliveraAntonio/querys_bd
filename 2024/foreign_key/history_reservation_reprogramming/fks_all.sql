@@ -16,7 +16,7 @@ ALTER TABLE history_reservation_led
 ADD CONSTRAINT reservations_fk
 FOREIGN KEY (localizador)
 REFERENCES reservations (id)
-ON DELETE SET NULL ;
+ON DELETE CASCADE ;
 
 -- ############################################################################ USERS
 -- AQUI SOLO CONSULTAMOS LOS REGISTROS A ELIMINAR
@@ -36,4 +36,4 @@ ALTER TABLE history_reservation_reprogramming
 ADD CONSTRAINT users_fk
 FOREIGN KEY (id_rep_request)
 REFERENCES users (id)
-ON DELETE SET NULL ;
+ON DELETE CASCADE ;

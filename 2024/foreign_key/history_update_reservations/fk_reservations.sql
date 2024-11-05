@@ -15,4 +15,4 @@ ALTER TABLE history_update_reservations
 ADD CONSTRAINT reservations_fk
 FOREIGN KEY (id_reservation)
 REFERENCES reservations (id)
-ON DELETE SET NULL ;
+ON DELETE CASCADE;

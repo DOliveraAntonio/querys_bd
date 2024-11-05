@@ -15,4 +15,4 @@ ALTER TABLE history_reservation_reprogramming
 ADD CONSTRAINT users_fk
 FOREIGN KEY (id_rep_request)
 REFERENCES users (id)
-ON DELETE SET NULL ;
+ON DELETE CASCADE;

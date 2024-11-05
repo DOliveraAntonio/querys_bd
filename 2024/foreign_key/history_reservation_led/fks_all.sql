@@ -16,7 +16,7 @@ ALTER TABLE history_reservation_led
 ADD CONSTRAINT reservations_led_fk
 FOREIGN KEY (id_reservation_led)
 REFERENCES reservations (id)
-ON DELETE SET NULL ;
+ON DELETE CASCADE;
 
 -- ############################################################################ RESERVATION
 -- AQUI SOLO CONSULTAMOS LOS REGISTROS A ELIMINAR
@@ -36,7 +36,7 @@ ALTER TABLE history_reservation_led
 ADD CONSTRAINT reservations_fk
 FOREIGN KEY (id_reservation)
 REFERENCES reservations (id)
-ON DELETE SET NULL ;
+ON DELETE CASCADE;
 
 -- ############################################################################ USERS
 -- AQUI SOLO CONSULTAMOS LOS REGISTROS A ELIMINAR
@@ -56,4 +56,4 @@ ALTER TABLE history_reservation_led
 ADD CONSTRAINT users_fk
 FOREIGN KEY (id_user)
 REFERENCES users (id)
-ON DELETE SET NULL ;
+ON DELETE CASCADE;
