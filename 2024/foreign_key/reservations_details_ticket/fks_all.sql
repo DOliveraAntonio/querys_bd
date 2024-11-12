@@ -101,8 +101,8 @@ ON DELETE SET NULL ;
 -- ############################################################################ PROMO CODE
 -- CAMBIAR VALOR A NULL
 UPDATE reservations_details_tickets
-SET promo_code = NULL
-where promo_code = 0;
+SET id_promo_code = NULL
+where id_promo_code = 0;
 
 -- AQUI SOLO CONSULTAMOS LOS REGISTROS A ELIMINAR
 SELECT * FROM reservations_details_tickets
