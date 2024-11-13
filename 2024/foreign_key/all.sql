@@ -2798,10 +2798,6 @@ ON DELETE CASCADE ;
 
 -- ############################################################################ CLIENTES
 -- YA PODEMOS CREAR LAS LLAVES FORANEAS
-SELECT count(*) as client FROM reservations
-WHERE id_cliente NOT IN (
-    SELECT id FROM client
-);
 
 -- AQUI YA LOS QUERYS PARA ELIMINAR ESOS REGISTROS
 DELETE FROM reservations
@@ -6785,3 +6781,6 @@ ADD CONSTRAINT web_details_transportation_fk
 FOREIGN KEY (transfer_unit_id)
 REFERENCES web_details_transportation (id)
 ON DELETE CASCADE ;
+
+
+-- ############################################################################ FINAL
