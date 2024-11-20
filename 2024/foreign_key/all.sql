@@ -6783,4 +6783,39 @@ REFERENCES web_details_transportation (id)
 ON DELETE CASCADE ;
 
 
+-- ############################################################################ DETALLES DE COLUMNAS YA CREADAS
+alter table concession_typeproduct
+    drop constraint concession_typeproduct_pkey;
+
+alter table concession_typeproduct
+    add primary key (id);
+
+alter table concession_typeproduct
+    alter column concession_id drop default;
+
+alter table concession_typeproduct
+    alter column concession_id drop not null;
+
+alter table concession_typeproduct
+    alter column concession_id type integer using concession_id::integer;
+
+alter table contactos_agency_merge
+    alter column agencia_id drop default;
+
+alter table tour_has_tour_schedule
+    drop constraint "tourservice_has_tourserviceSchedule_pkey";
+
+alter table tour_has_tour_schedule
+    add constraint "tourservice_has_tourserviceSchedule_pkey"
+        primary key (id);
+
+alter table moneda_programada
+    alter column id_moneda_activa drop default;
+
+alter table moneda_programada
+    alter column id_moneda_valor drop default;
+
+alter table moneda_programada
+    alter column id_moneda drop default;
+
 -- ############################################################################ FINAL
