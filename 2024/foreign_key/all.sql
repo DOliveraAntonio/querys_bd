@@ -4562,6 +4562,55 @@ ON DELETE SET NULL ;
 
 
 
+
+-- ############################################################################ TOUR SCHEDULE
+alter table tour_has_tour_schedule
+    drop constraint "tourservice_has_tourserviceSchedule_pkey";
+
+alter table tour_has_tour_schedule
+    add constraint "tourservice_has_tourserviceSchedule_pkey"
+        primary key (id);
+
+-- CAMBIAR VALOR A NULL
+UPDATE tour_has_tour_schedule
+SET tour_schedule_id = NULL
+where tour_schedule_id = 0;
+
+-- AQUI YA LOS QUERYS PARA ELIMINAR ESOS REGISTROS
+DELETE FROM tour_has_tour_schedule
+WHERE tour_schedule_id NOT IN (
+    SELECT id FROM tour_schedule
+);
+
+-- YA PODEMOS CREAR LAS LLAVES FORANEAS
+ALTER TABLE tour_has_tour_schedule
+ADD CONSTRAINT tour_schedule_fk
+FOREIGN KEY (tour_schedule_id)
+REFERENCES tour_schedule (id)
+ON DELETE CASCADE ;
+
+-- ############################################################################ TOUR SERVICE
+-- CAMBIAR VALOR A NULL
+UPDATE tour_has_tour_schedule
+SET tour_id = NULL
+where tour_id = 0;
+
+-- AQUI YA LOS QUERYS PARA ELIMINAR ESOS REGISTROS
+DELETE FROM tour_has_tour_schedule
+WHERE tour_id NOT IN (
+    SELECT id FROM tour_servicios
+);
+
+-- YA PODEMOS CREAR LAS LLAVES FORANEAS
+ALTER TABLE tour_has_tour_schedule
+ADD CONSTRAINT tour_servicios_fk
+FOREIGN KEY (tour_id)
+REFERENCES tour_servicios (id)
+ON DELETE CASCADE ;
+
+
+
+
 -- ############################################################################ SEASON
 -- CAMBIAR VALOR A NULL
 UPDATE tour_rate
@@ -6801,13 +6850,6 @@ alter table concession_typeproduct
 
 alter table contactos_agency_merge
     alter column agencia_id drop default;
-
-alter table tour_has_tour_schedule
-    drop constraint "tourservice_has_tourserviceSchedule_pkey";
-
-alter table tour_has_tour_schedule
-    add constraint "tourservice_has_tourserviceSchedule_pkey"
-        primary key (id);
 
 alter table moneda_programada
     alter column id_moneda_activa drop default;
